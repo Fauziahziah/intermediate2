@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.mysubmission_intermediate.UI.Story.Home.HomeFragment"
+        android:label="@string/story_app"
+        tools:layout="@layout/fragment_home">
+        <action
+            app:launchSingleTop="true"
+            android:id="@+id/action_navigation_home_to_navigation_addStory"
+            app:destination="@id/navigation_addStory" />
+        <action
+            android:id="@+id/action_navigation_home_to_mapsActivity"
+            app:destination="@id/mapsActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_addStory"
+        android:name="com.example.mysubmission_intermediate.UI.Story.AddStory.AddStoryFragment"
+        android:label="@string/title_addStory"
+        tools:layout="@layout/fragment_add_story">
+        <action
+            app:launchSingleTop="true"
+            android:id="@+id/action_navigation_addStory_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_logout"
+        android:name="com.example.mysubmission_intermediate.UI.Story.logout.LogoutFragment"
+        android:label="@string/title_logout"
+        tools:layout="@layout/fragment_logout" >
+        <action
+            android:id="@+id/action_navigation_logout_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.mysubmission_intermediate.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.example.mysubmission_intermediate.UI.Story.maps.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
+
+</navigation>
